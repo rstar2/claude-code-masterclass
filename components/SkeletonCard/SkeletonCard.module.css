@@ -1,0 +1,51 @@
+@reference "../../app/globals.css";
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.card {
+  @apply w-full rounded-lg bg-lighter p-5;
+}
+
+.topSection {
+  @apply flex gap-5;
+}
+
+.avatar {
+  @apply h-15 w-15 shrink-0 rounded-full bg-light;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.titleLines {
+  @apply flex flex-col gap-2.5;
+}
+
+.titleLinePrimary {
+  @apply h-2.5 w-50 rounded bg-light;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.titleLineSecondary {
+  @apply h-2.5 w-35 rounded bg-light;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.bodySection {
+  @apply mt-5 flex flex-col gap-3.5;
+}
+
+.bodyLinePrimary {
+  @apply h-2.5 w-full rounded bg-light;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.bodyLineTruncated {
+  @apply h-2.5 w-60 rounded bg-light;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

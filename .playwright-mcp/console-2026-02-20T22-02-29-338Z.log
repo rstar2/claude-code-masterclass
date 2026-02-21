@@ -1,0 +1,120 @@
+[      30ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/preview:0
+[     304ms] Error: ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx
+
+
+    at Object.getCompilationErrors (file:///media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/dev/hot-reloader-turbopack.js:1008:59)
+    at DevBundlerService.getCompilationError (file:///media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/lib/dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file:///media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/dev/next-dev-server.js:706:42)
+    at DevServer.findPageComponents (file:///media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/dev/next-dev-server.js:676:43)
+    at async DevServer.renderErrorToResponseImpl (file:///media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/next@16.1.6_@babel+core@7.29.0_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/base-server.js:1733:26)
+[     298ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
+[     338ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
+[   19335ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
+[   30933ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
+[   31016ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
+[   56615ms] [ERROR] ./components/SkeletonCard/SkeletonCard.module.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: /media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/components/SkeletonCard/SkeletonCard.module.css:1:1: Cannot apply unknown utility class `rounded-lg`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+    [at Input.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/input.js:106:16)]
+    [at Root.error (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/node.js:115:32)]
+    [at Object.Once (/media/rumen/D/ProjectsLearn/nextjs/claude-code-masterclass/node_modules/.pnpm/@tailwindcss+postcss@4.1.18/node_modules/@tailwindcss/postcss/dist/index.js:10:6911)]
+    [at process.processTicksAndRejections (node:internal/process/task_queues:95:5)]
+    [at async LazyResult.runAsync (turbopack:///[project]/node_modules/.pnpm/postcss@8.4.31/node_modules/postcss/lib/lazy-result.js:261:11)]
+    [at async transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:34)]
+    [at async run (turbopack:///[turbopack-node]/ipc/evaluate.ts:92:23)]
+
+Import trace:
+  Server Component:
+    ./components/SkeletonCard/SkeletonCard.module.css
+    ./components/SkeletonCard/SkeletonCard.tsx
+    ./app/(public)/preview/page.tsx @ http://localhost:3000/_next/static/chunks/3ff38_next_dist_72d524f5._.js:1920
