@@ -29,6 +29,4 @@ Create a single sentence message (or two in rare case where more appropriate).
 
 1. Show summary of the changes
 2. Propose a commit message
-3. Ask for confirmation to perform the commit
-
-DO NOT AUTO COMMIT - wait for user approval
+3. Ask for confirmation to perform the commit. Wait for user approval, and when granted then do it.
