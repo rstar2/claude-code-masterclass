@@ -1,7 +1,7 @@
 ---
 description: Create a commit message based on the analyzing the git diffs
+allowed-tools: Bash(git status:*), Bash(git diff --staged), Bash(git commit:*)
 ---
-
 
 ## Task
 
@@ -25,4 +25,12 @@ If the commit goes into one of these categories prefix it with the corresponding
 
 Use present tense.
 
-Create a single (or two in rare case where more appropriate) sentence message.
+Create a single sentence message (or two in rare case where more appropriate).
+
+## Output
+
+1. Show summary of the changes
+2. Propose a commit message
+3. Ask for confirmation to perform the commit
+
+DO NOT AUTO COMMIT - wait for user approval
