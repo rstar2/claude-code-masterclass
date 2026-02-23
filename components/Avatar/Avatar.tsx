@@ -1,20 +1,16 @@
-import styles from "./Avatar.module.css"
+import styles from "./Avatar.module.css";
+import { getInitials } from "@/util/initials";
 
 interface AvatarProps {
-  name: string
+  name: string;
 }
 
 export default function Avatar({ name }: AvatarProps) {
-  const initials = name
-    .split(" ")
-    .map(word => word[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2)
+  const initials = getInitials(name);
 
   return (
     <div className={styles.avatar} role="img" aria-label={`Avatar for ${name}`}>
       {initials}
     </div>
-  )
+  );
 }

@@ -5,5 +5,5 @@ export default function SignupPage() {
         <h2 className="form-title">Log in to Your Account</h2>
       </div>
     </div>
-  )
+  );
 }

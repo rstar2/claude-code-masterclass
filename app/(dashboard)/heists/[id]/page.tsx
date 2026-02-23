@@ -3,5 +3,5 @@ export default function HeistDetailsPage() {
     <div className="page-content">
       <h2>Heist Details</h2>
     </div>
-  )
+  );
 }

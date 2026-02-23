@@ -5,5 +5,5 @@ export default function CreateHeistPage() {
         <h2 className="form-title">Create a New Heist</h2>
       </div>
     </div>
-  )
+  );
 }

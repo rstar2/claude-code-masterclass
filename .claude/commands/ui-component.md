@@ -22,16 +22,16 @@ Create `tests/components/[ComponentName].test.tsx` with 2-3 simple tests:
 Pattern:
 
 ```tsx
-import { render, screen } from "@testing-library/react"
-import { describe, it, expect } from "vitest"
-import ComponentName from "@/components/ComponentName"
+import { render, screen } from "@testing-library/react";
+import { describe, it, expect } from "vitest";
+import ComponentName from "@/components/ComponentName";
 
 describe("ComponentName", () => {
   it("renders successfully", () => {
-    render(<ComponentName />)
+    render(<ComponentName />);
     // assertions
-  })
-})
+  });
+});
 ```
 
 ### 2. Run Tests (expect failure)

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__context7__resolve-library-id",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "Bash(npx skills find:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm test:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "false | jq -r '.tool_input.file_path | select(endswith(\".tsx\"))' | { read fp; npm run format -- \"$fp\"; }"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".tsx\"))' | xargs -r npm run format"
+          }
+        ]
+      }
+    ]
+  }
+}

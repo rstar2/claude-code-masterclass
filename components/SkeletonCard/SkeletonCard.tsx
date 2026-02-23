@@ -1,4 +1,4 @@
-import styles from "./SkeletonCard.module.css"
+import styles from "./SkeletonCard.module.css";
 
 export default function SkeletonCard() {
   return (
@@ -16,5 +16,5 @@ export default function SkeletonCard() {
         <div className={styles.bodyLineTruncated} />
       </div>
     </div>
-  )
+  );
 }

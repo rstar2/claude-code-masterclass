@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "format": "prettier --write",
     "lint": "eslint",
     "test": "vitest"
   },
@@ -28,6 +29,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.6",
     "jsdom": "^27.2.0",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
