@@ -1,24 +1,10 @@
-# CLAUDE.md
-
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
-
-## Development Commands
-
-```bash
-npm install              # Install dependencies
-npm run dev              # Start development server (http://localhost:3000)
-npm run build            # Build for production
-npm run start            # Start production server
-npm run lint             # Run ESLint
-npm run format           # Run Prettier
-npm run test             # Run Vitest tests
-```
+# Funny Heist app
 
 ## Architecture
 
 ### Project Type
 
-Next.js 16 App Router application - a playful mission/task management app themed around "office mischief heists."
+Next.js application - a playful mission/task management app themed around "office mischief heists."
 
 ### Tech Stack
 
@@ -66,11 +52,7 @@ Uses route groups for logical separation:
 
 ### Authentication Flow
 
-Not yet implemented, but planned architecture:
-
-- Splash page determines routing based on auth state
-- Public routes accessible without auth
-- Dashboard routes require auth (future middleware/layout protection)
+- Not yet implemented, but planned architecture:
 
 ### Heist Domain Model
 
