@@ -1,6 +1,6 @@
 ---
 description: Create a commit message based on the analyzing the git diffs
-allowed-tools: Bash(git status:*), Bash(git diff --staged), Bash(git commit:*)
+allowed-tools: Bash(git status:*), Bash(git diff --staged:*), Bash(git commit:*)
 ---
 
 ## Context
