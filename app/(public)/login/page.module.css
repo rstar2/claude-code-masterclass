@@ -1,0 +1,13 @@
+@reference "../../globals.css";
+
+.authForm {
+  @apply mx-auto mt-8 max-w-md w-full flex flex-col gap-5;
+}
+
+.authFooter {
+  @apply mt-6 text-center text-sm text-body;
+}
+
+.authLink {
+  @apply text-primary hover:text-secondary underline;
+}
