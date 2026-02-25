@@ -47,5 +47,5 @@ svg.logo {
   @apply text-center text-xl font-bold;
 }
 .btn {
-  @apply rounded bg-primary px-4 py-2 text-dark transition-colors hover:bg-secondary;
+  @apply inline-flex items-center gap-2 rounded-[10px] h-10 bg-linear-to-r from-[#9810fa] to-[#e60076] px-5 text-base font-normal text-white hover:opacity-90;
 }

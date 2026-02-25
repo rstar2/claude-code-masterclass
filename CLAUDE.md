@@ -42,6 +42,7 @@ Uses route groups for logical separation:
 - Server Components by default (use `'use client'` directive for interactivity)
 - Navbar in `components/Navbar/` uses CSS modules alongside global utilities
 - Tests mirror component structure in `tests/` directory
+- Barrel export convention, (example for a `Navbar` component: `components/Navbar/index.ts`, `components/Navbar/Navbar.ts` and `components/Navbar/Navbar.module.css`)
 
 ### TypeScript Config
 
@@ -54,10 +55,14 @@ Uses route groups for logical separation:
 
 - Not yet implemented, but planned architecture:
 
-### Heist Domain Model
+### Domain Model
 
 Heists are the core entity with:
 
 - Status tracking: active, assigned, expired
 - CRUD operations via dedicated routes
 - User assignment system
+
+## Others
+
+- Always when implementing a new feature try to check the latest documentation fo the technologies you tend to use by calling the Context7 MCP server.
