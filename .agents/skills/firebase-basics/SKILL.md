@@ -2,9 +2,11 @@
 name: firebase-basics
 description: Guide for setting up and using Firebase. Use this skill when the user is getting started with Firebase - setting up local environment, using Firebase for the first time, or adding Firebase to their app.
 ---
+
 ## Prerequisites
 
 ### Node.js and npm
+
 To use the Firebase CLI, you need Node.js (version 20+ required) and npm (which comes with Node.js).
 
 **Recommended: Use a Node Version Manager**
@@ -24,6 +26,7 @@ This avoids permission issues when installing global packages.
 Download and install the LTS version from [nodejs.org](https://nodejs.org/).
 
 **Verify Installation:**
+
 ```bash
 node --version
 npm --version
@@ -40,6 +43,7 @@ npm install -g firebase-tools
 ```
 
 Verify installation:
+
 ```bash
 firebase --version
 ```
@@ -64,6 +68,7 @@ firebase projects:create
 ```
 
 You will be prompted to:
+
 1. Enter a Project ID (must be unique globally).
 2. Enter a display name.
 
@@ -78,6 +83,7 @@ firebase init
 ```
 
 The CLI will guide you through:
+
 - Selecting features (Firestore, Functions, Hosting, etc.).
 - Associating with an existing project or creating a new one.
 - Configuring files (firebase.json, .firebaserc).
@@ -87,6 +93,7 @@ The CLI will guide you through:
 The Firebase CLI documents itself. Instruct the user to use help commands to discover functionality.
 
 - **Global Help**: List all available commands and categories.
+
   ```bash
   firebase --help
   ```
