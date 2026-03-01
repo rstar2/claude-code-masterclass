@@ -1,22 +1,49 @@
 "use client";
 
-import { useActionState } from "react";
+import { useState, SyntheticEvent } from "react";
 import Link from "next/link";
-import { signupAction } from "@/actions/auth";
+import { useRouter } from "next/navigation";
+import { signup } from "@/lib/auth";
+import { createUserDocument } from "@/actions/user";
+import { generateCodeName } from "@/lib/codename";
+import { getAuthErrorMessage } from "@/lib/auth-errors";
 import Input from "@/components/Input/Input";
 import PasswordInput from "@/components/PasswordInput/PasswordInput";
 import SubmitButton from "@/components/SubmitButton/SubmitButton";
 import styles from "./page.module.css";
 
 export default function SignupPage() {
-  const [state, formAction] = useActionState(signupAction, null);
+  const router = useRouter();
+  const [error, setError] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setError("");
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    const codeName = generateCodeName();
+
+    try {
+      const userCredential = await signup(email, password, codeName);
+      await createUserDocument(userCredential.user.uid, codeName);
+      router.push("/heists");
+    } catch (err) {
+      setError(getAuthErrorMessage(err as { code: string }));
+    } finally {
+      setIsLoading(false);
+    }
+  }
 
   return (
     <div className="center-content px-4">
       <div className="mx-auto w-full max-w-md">
         <h2 className="form-title">Sign Up for an Account</h2>
 
-        <form action={formAction} className={styles.authForm}>
+        <form onSubmit={handleSubmit} className={styles.authForm}>
           <Input
             type="email"
             name="email"
@@ -33,7 +60,9 @@ export default function SignupPage() {
             autoComplete="new-password"
           />
 
-          <SubmitButton>Sign Up</SubmitButton>
+          <SubmitButton disabled={isLoading}>Sign Up</SubmitButton>
+
+          {error && <div className="text-error text-sm mt-2">{error}</div>}
         </form>
 
         <p className={styles.authFooter}>

@@ -119,4 +119,4 @@ Add same error display pattern as login.
 4. Test errors:
    - Wrong password → "Invalid email or password"
    - Duplicate signup → "Email already registered"
-5. Run tests: `npm test` for codename tests
+5. Run tests: `pnpm test` for codename tests

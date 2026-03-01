@@ -4,19 +4,24 @@ import { useFormStatus } from "react-dom";
 
 export interface SubmitButtonProps {
   children: React.ReactNode;
+  disabled?: boolean;
 }
 
-export default function SubmitButton({ children }: SubmitButtonProps) {
+export default function SubmitButton({
+  children,
+  disabled,
+}: SubmitButtonProps) {
   const { pending } = useFormStatus();
+  const isDisabled = disabled ?? pending;
 
   return (
     <button
       type="submit"
-      disabled={pending}
+      disabled={isDisabled}
       className="btn"
-      aria-busy={pending}
+      aria-busy={isDisabled}
     >
-      {pending ? "Submitting..." : children}
+      {isDisabled ? "Submitting..." : children}
     </button>
   );
 }

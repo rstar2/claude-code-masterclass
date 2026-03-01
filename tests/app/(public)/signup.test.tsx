@@ -1,8 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect, vi } from "vitest";
 
+// Mock next/navigation
+vi.mock("next/navigation", () => ({
+  useRouter: vi.fn(() => ({ push: vi.fn() })),
+}));
+
 // Mock the server action
-vi.mock("@/app/actions/auth", () => ({
+vi.mock("@/actions/auth", () => ({
   signupAction: vi.fn(),
 }));
 
