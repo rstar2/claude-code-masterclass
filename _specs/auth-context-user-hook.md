@@ -33,7 +33,7 @@ N/A – No UI components for this feature
 - [x] useUser() hook is accessible from any component within the whole app
 - [x] Returns null for user when not authenticated
 - [x] Returns Firebase User object when authenticated
-- [X] Loading state is true only during initial auth check, not on subsequent auth changes
+- [x] Loading state is true only during initial auth check, not on subsequent auth changes
 - [x] Auth state updates automatically trigger re-renders in consuming components
 - [x] TypeScript types are exported for use in components
 
