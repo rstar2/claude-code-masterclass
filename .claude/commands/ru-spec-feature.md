@@ -1,6 +1,6 @@
 ---
 description: Create a feature spec file and branch from a short idea
-argument-hint: [Short feature description, optional: "figma: <component-link>"]
+argument-hint: [Short feature description, optional: "Figma: <component-link>"]
 allowed-tools: Read, Write, Glob, Bash(git switch:*)
 ---
 
@@ -50,11 +50,11 @@ From `$ARGUMENTS`, extract:
    - Example: `claude/feature/card-component`.
 
 4. `figma_link` (optional)
-   - If `$ARGUMENTS` contains the substring `figma:`
-   - Then the text after `figma:` is the figma component link.
+   - If `$ARGUMENTS` contains the substring `Figma:`
+   - Then the text after `Figma:` is the figma component link.
    - Trim whitespace.
    - Example input:
-     > If whole arguments are: `/spec Card component, figma: https://www.figma.com/design/some-link` then `figma_link` becomes `https://www.figma.com/design/some-link`.
+     > If whole arguments are: `/ru-spec Card component. Figma: https://www.figma.com/design/some-link` then `figma_link` becomes `https://www.figma.com/design/some-link`.
 
 If you cannot infer a sensible `feature_title` and `feature_slug`, ask the user to clarify instead of guessing.
 
