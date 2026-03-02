@@ -78,6 +78,16 @@ describe("Navbar", () => {
   });
 
   describe("when user is not logged in", () => {
+    it("renders the login button", () => {
+      vi.mocked(useUser).mockReturnValue({ user: null, loading: false });
+
+      render(<Navbar />);
+
+      const loginLink = screen.getByRole("link", { name: /log in/i });
+      expect(loginLink).toBeInTheDocument();
+      expect(loginLink).toHaveAttribute("href", "/login");
+    });
+
     it("does not render the logout button", () => {
       vi.mocked(useUser).mockReturnValue({ user: null, loading: false });
 
@@ -85,6 +95,18 @@ describe("Navbar", () => {
 
       const logoutButton = screen.queryByRole("button", { name: "Logout" });
       expect(logoutButton).not.toBeInTheDocument();
+    });
+  });
+
+  describe("when user is logged in", () => {
+    it("does not render the login button", () => {
+      const mockUser = { uid: "123", email: "test@example.com" };
+      vi.mocked(useUser).mockReturnValue({ user: mockUser, loading: false });
+
+      render(<Navbar />);
+
+      const loginLink = screen.queryByRole("link", { name: /log in/i });
+      expect(loginLink).not.toBeInTheDocument();
     });
   });
 });

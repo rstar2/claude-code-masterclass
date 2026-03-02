@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Clock8, Plus } from "lucide-react";
+import { Clock8, LogIn, Plus } from "lucide-react";
 import Link from "next/link";
 import { useUser } from "@/lib/hooks/useUser";
 import { logout } from "@/lib/auth";
@@ -33,7 +33,14 @@ export default function Navbar() {
           <div>Tiny missions. Big office mischief.</div>
         </header>
         <ul className={styles.navActions}>
-          {user && (
+          {!user ? (
+            <li>
+              <Link href="/login" className="btn">
+                <LogIn size={20} strokeWidth={2} />
+                <span>Log In</span>
+              </Link>
+            </li>
+          ) : (
             <li>
               <button
                 onClick={handleLogout}
