@@ -11,6 +11,8 @@ export default function SubmitButton({
   children,
   disabled,
 }: SubmitButtonProps) {
+  // NOTE: because useFormStatus() will work ONLY when the parent form uses an action,
+  // e.g. <form action={...}> ... <SubmitButton/> </form>
   const { pending } = useFormStatus();
   const isDisabled = disabled ?? pending;
 
