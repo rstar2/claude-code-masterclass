@@ -81,7 +81,7 @@ Use `git switch -c <branch_name>` for switching to a new branch
 
 ## Step 5. Draft the spec content
 
-Create a markdown spec document that Plan mode can use directly and save it in the \_specs folder using the `feature_slug`. Use the exact structure as defined in the spec template file here: @\_specs/_template.md. Do not add technical implementation details such as code examples.
+Create a markdown spec document that Plan mode can use directly and save it in the \_specs folder using the `feature_slug`. Use the exact structure as defined in the spec template file here: @\_specs/\_template.md. Do not add technical implementation details such as code examples.
 
 ## Step 6. Final output to the user
 
