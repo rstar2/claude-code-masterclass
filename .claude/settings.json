@@ -27,6 +27,15 @@
             "command": "jq -r '.tool_input.file_path | select(endswith(\".tsx\"))' | xargs -r npm run format"
           }
         ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/enforce-pnpm.sh"
+          }
+        ]
       }
     ]
   }
