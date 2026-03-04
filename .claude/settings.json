@@ -7,13 +7,22 @@
       "mcp__playwright__browser_snapshot",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_evaluate",
-      "Bash(npx skills find:*)",
-      "Bash(npm run build:*)",
-      "Bash(npm test:*)"
+      "Bash(npx skills find:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/enforce-pnpm.sh"
+          }
+        ]
+      }
+    ],
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
@@ -25,15 +34,6 @@
           {
             "type": "command",
             "command": "jq -r '.tool_input.file_path | select(endswith(\".tsx\"))' | xargs -r npm run format"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": ".claude/hooks/enforce-pnpm.sh"
           }
         ]
       }
