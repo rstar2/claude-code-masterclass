@@ -33,12 +33,18 @@ h4 {
   }
 }
 svg.logo {
-  display: inline-block;
+  @apply inline-block;
 }
 
 /* generic page styles */
 .page-content {
   @apply my-4 mx-auto w-6xl min-w-2xl max-w-full;
+}
+
+@media (max-width: 1023px) {
+  .page-content {
+    @apply px-4 min-w-auto;
+  }
 }
 .center-content {
   @apply flex flex-col justify-center items-center text-justify min-h-lvh;

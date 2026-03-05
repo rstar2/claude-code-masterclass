@@ -2,6 +2,8 @@
 
 import { useHeists } from "@/lib/hooks";
 import type { HeistFilter } from "@/lib/hooks/useHeists";
+import HeistCard from "@/components/HeistCard";
+import HeistCardSkeleton from "@/components/HeistCardSkeleton";
 import styles from "./page.module.css";
 
 export default function HeistsPage() {
@@ -25,16 +27,32 @@ function HeistSection({
 
   let content;
   if (loading) {
-    content = <p>Loading...</p>;
+    content = (
+      <div className={styles.grid}>
+        {Array.from({ length: 3 }).map((_, i) => (
+          <HeistCardSkeleton key={i} />
+        ))}
+      </div>
+    );
   } else if (error) {
     content = <p className={styles.error}>Error: {error.message}</p>;
+  } else if (heists.length === 0) {
+    content = <p className={styles.empty}>No heists found</p>;
   } else {
     content = (
-      <ul className={styles.list}>
+      <div className={styles.grid}>
         {heists.map((h) => (
-          <li key={h.id}>{h.title}</li>
+          <HeistCard
+            key={h.id}
+            id={h.id}
+            title={h.title}
+            targetUser={`@${h.assignedToCodename}`}
+            createdBy={`@${h.createdByCodename}`}
+            deadline={formatDeadline(h.deadline)}
+            status={filter}
+          />
         ))}
-      </ul>
+      </div>
     );
   }
 
@@ -44,4 +62,12 @@ function HeistSection({
       {content}
     </div>
   );
+}
+
+function formatDeadline(date: Date): string {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
 }
