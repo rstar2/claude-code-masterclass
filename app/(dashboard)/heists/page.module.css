@@ -1,0 +1,26 @@
+@reference "../../globals.css";
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  color: var(--heading);
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.list li {
+  padding: 0.75rem;
+  background: var(--light);
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.error {
+  color: var(--error);
+}

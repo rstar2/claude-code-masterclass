@@ -1,12 +1,8 @@
-import {
-  DocumentData,
-  FieldValue,
-  QueryDocumentSnapshot,
-} from "firebase/firestore";
+import { DocumentData, QueryDocumentSnapshot } from "firebase/firestore";
 
 export type FinalStatus = null | "success" | "failure";
 
-export interface Heist {
+export type Heist = {
   id: string;
   createdAt: Date;
   title: string;
@@ -17,37 +13,25 @@ export interface Heist {
   assignedToCodename: string;
   deadline: Date;
   finalStatus: FinalStatus;
-}
+};
 
-export interface CreateHeistInput {
-  createdAt: FieldValue;
-  title: string;
-  description: string;
-  createdBy: string;
-  createdByCodename: string;
-  assignedTo: string;
-  assignedToCodename: string;
-  deadline: Date;
-  finalStatus: FinalStatus;
-}
+export type CreateHeistInput = Omit<Heist, "id">;
 
-export interface UpdateHeistInput {
-  title?: string;
-  description?: string;
-  assignedTo?: string;
-  assignedToCodename?: string;
-  deadline?: Date;
-  finalStatus?: FinalStatus;
-}
+export type UpdateHeistInput = Omit<
+  CreateHeistInput,
+  "createdBy" | "createdBy" | "createdByCodename"
+>;
 
 export const heistConverter = {
-  toFirestore: (data: Partial<Heist>): DocumentData => data,
+  toFirestore: (data: Heist): DocumentData => data,
 
-  fromFirestore: (snapshot: QueryDocumentSnapshot): Heist =>
-    ({
+  fromFirestore: (snapshot: QueryDocumentSnapshot): Heist => {
+    const data = snapshot.data();
+    return {
       id: snapshot.id,
-      ...snapshot.data(),
-      createdAt: snapshot.data().createdAt?.toDate(),
-      deadline: snapshot.data().deadline?.toDate(),
-    }) as Heist,
+      ...data,
+      createdAt: data.createdAt?.toDate(),
+      deadline: data.deadline?.toDate(),
+    } as Heist;
+  },
 };
