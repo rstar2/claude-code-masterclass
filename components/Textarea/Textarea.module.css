@@ -1,0 +1,17 @@
+@reference "../../app/globals.css";
+
+.textareaField {
+  @apply flex flex-col gap-2;
+}
+
+.textareaLabel {
+  @apply text-sm font-medium text-body;
+}
+
+.textarea {
+  @apply w-full rounded border border-lighter bg-light px-4 py-3 text-heading resize-y;
+}
+
+.textarea:focus {
+  @apply outline-none border-primary;
+}

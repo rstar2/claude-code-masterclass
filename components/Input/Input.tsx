@@ -6,6 +6,7 @@ export interface InputProps {
   label: string;
   required?: boolean;
   minLength?: number;
+  maxLength?: number;
   autoComplete?: string;
 }
 
@@ -15,6 +16,7 @@ export default function Input({
   label,
   required = false,
   minLength,
+  maxLength,
   autoComplete,
 }: InputProps) {
   return (
@@ -28,6 +30,7 @@ export default function Input({
         name={name}
         required={required}
         minLength={minLength}
+        maxLength={maxLength}
         autoComplete={autoComplete}
         className={styles.input}
       />

@@ -1,0 +1,5 @@
+@reference "../../../globals.css";
+
+.heistForm {
+  @apply mt-6 flex flex-col gap-4;
+}
