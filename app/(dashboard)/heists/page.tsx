@@ -61,7 +61,6 @@ function HeistSection({
       <div className={styles.grid}>
         {heists.map((h) => {
           const sharedProps = {
-            key: h.id,
             id: h.id,
             title: h.title,
             targetUser: `@${h.assignedToCodename}`,
@@ -71,11 +70,12 @@ function HeistSection({
 
           return isExpired ? (
             <ExpiredHeistCard
+              key={h.id}
               {...sharedProps}
               status={getExpiredStatus(h.finalStatus)}
             />
           ) : (
-            <HeistCard {...sharedProps} status={filter} />
+            <HeistCard key={h.id} {...sharedProps} status={filter} />
           );
         })}
       </div>
