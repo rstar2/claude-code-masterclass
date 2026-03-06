@@ -1,3 +1,4 @@
+import styles from "./Badge.module.css";
 
 interface BadgeProps {
   children?: string;
