@@ -4,6 +4,10 @@ import { useHeists } from "@/lib/hooks";
 import type { HeistFilter } from "@/lib/hooks/useHeists";
 import HeistCard from "@/components/HeistCard";
 import HeistCardSkeleton from "@/components/HeistCardSkeleton";
+import ExpiredHeistCard, {
+  type HeistStatus,
+} from "@/components/ExpiredHeistCard";
+import ExpiredHeistCardSkeleton from "@/components/ExpiredHeistCardSkeleton";
 import styles from "./page.module.css";
 
 export default function HeistsPage() {
@@ -16,6 +20,15 @@ export default function HeistsPage() {
   );
 }
 
+function getExpiredStatus(finalStatus: string | null): HeistStatus {
+  if (finalStatus === "failure") return "failed";
+  if (finalStatus === "success") return "success";
+  console.warn(
+    `Unexpected finalStatus: ${finalStatus}, defaulting to "failed"`,
+  );
+  return "failed";
+}
+
 function HeistSection({
   title,
   filter,
@@ -24,13 +37,18 @@ function HeistSection({
   filter: HeistFilter;
 }) {
   const { heists, loading, error } = useHeists(filter);
+  const isExpired = filter === "expired";
+  const SkeletonComponent = isExpired
+    ? ExpiredHeistCardSkeleton
+    : HeistCardSkeleton;
 
   let content;
   if (loading) {
     content = (
-      <div className={styles.grid}>
+      <div className={styles.grid} aria-live="polite" aria-busy="true">
+        <span className="sr-only">Loading heists...</span>
         {Array.from({ length: 3 }).map((_, i) => (
-          <HeistCardSkeleton key={i} />
+          <SkeletonComponent key={i} />
         ))}
       </div>
     );
@@ -41,17 +59,19 @@ function HeistSection({
   } else {
     content = (
       <div className={styles.grid}>
-        {heists.map((h) => (
-          <HeistCard
-            key={h.id}
-            id={h.id}
-            title={h.title}
-            targetUser={`@${h.assignedToCodename}`}
-            createdBy={`@${h.createdByCodename}`}
-            deadline={formatDeadline(h.deadline)}
-            status={filter}
-          />
-        ))}
+        {heists.map((h) => {
+          const CardComponent: React.ComponentType = isExpired ? ExpiredHeistCard : HeistCard;
+          const cardProps = {
+            id: h.id,
+            title: h.title,
+            targetUser: `@${h.assignedToCodename}`,
+            createdBy: `@${h.createdByCodename}`,
+            deadline: formatDeadline(h.deadline),
+            status: isExpired ? getExpiredStatus(h.finalStatus) : filter,
+          };
+
+          return <CardComponent key={h.id} {...cardProps} />;
+        })}
       </div>
     );
   }

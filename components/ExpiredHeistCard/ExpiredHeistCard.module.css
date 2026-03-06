@@ -1,0 +1,125 @@
+@reference "../../app/globals.css";
+
+.card {
+  background-color: var(--color-lighter);
+  border: 1px solid #1e2939;
+  border-radius: 10px;
+  padding: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 48px;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.3125px;
+  color: var(--color-heading);
+  margin: 0;
+  flex: 1;
+  padding-right: 0.5rem;
+}
+
+.titleLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.titleLink:hover .title {
+  color: var(--color-primary);
+}
+
+.statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 4px;
+  padding: 0.125rem 0.5rem;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.success {
+  background-color: rgba(5, 223, 114, 0.05);
+  border: 1px solid rgba(5, 223, 114, 0.2);
+  color: var(--color-success);
+}
+
+.failed {
+  background-color: rgba(255, 100, 103, 0.05);
+  border: 1px solid rgba(255, 100, 103, 0.2);
+  color: var(--color-error);
+}
+
+.statusIcon {
+  flex-shrink: 0;
+}
+
+.metadata {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 20px;
+}
+
+.icon {
+  color: var(--color-body);
+  flex-shrink: 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: var(--color-body);
+}
+
+.valuePrimary {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: var(--color-primary);
+}
+
+.valueSecondary {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: var(--color-secondary);
+}
+
+.deadline {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.1504px;
+  color: var(--color-body);
+}
