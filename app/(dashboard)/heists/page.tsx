@@ -60,17 +60,23 @@ function HeistSection({
     content = (
       <div className={styles.grid}>
         {heists.map((h) => {
-          const CardComponent: React.ComponentType = isExpired ? ExpiredHeistCard : HeistCard;
-          const cardProps = {
+          const sharedProps = {
+            key: h.id,
             id: h.id,
             title: h.title,
             targetUser: `@${h.assignedToCodename}`,
             createdBy: `@${h.createdByCodename}`,
             deadline: formatDeadline(h.deadline),
-            status: isExpired ? getExpiredStatus(h.finalStatus) : filter,
           };
 
-          return <CardComponent key={h.id} {...cardProps} />;
+          return isExpired ? (
+            <ExpiredHeistCard
+              {...sharedProps}
+              status={getExpiredStatus(h.finalStatus)}
+            />
+          ) : (
+            <HeistCard {...sharedProps} status={filter} />
+          );
         })}
       </div>
     );
