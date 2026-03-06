@@ -2,6 +2,7 @@
 
 import SkeletonCard from "@/components/SkeletonCard";
 import Avatar from "@/components/Avatar";
+import Badge from "@/components/Badge";
 
 export default function PreviewPage() {
   return (
@@ -30,6 +31,17 @@ export default function PreviewPage() {
           <SkeletonCard />
           <SkeletonCard />
           <SkeletonCard />
+        </div>
+      </div>
+
+      <div className="mt-8">
+        <h3 className="text-lg font-semibold">Badge</h3>
+        <p className="mb-4 text-body">Simple label badge with custom text</p>
+        <div className="flex gap-4">
+          <Badge>Active</Badge>
+          <Badge>Pending</Badge>
+          <Badge>New</Badge>
+          <Badge />
         </div>
       </div>
     </div>
